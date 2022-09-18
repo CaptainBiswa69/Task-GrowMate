@@ -56,7 +56,7 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
                           ),
                         ),
                         const SizedBox(
-                          width: 40,
+                          width: 50,
                         ),
                         const ImageIcon(
                           AssetImage("assets/icons/Filter_1.png"),
