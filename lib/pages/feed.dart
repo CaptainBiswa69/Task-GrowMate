@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grow_mate/pages/reactions.dart';
+import 'package:grow_mate/pages/reasearch_news.dart';
+import 'package:grow_mate/pages/related.dart';
 
 class Feed extends StatefulWidget {
   const Feed({Key? key}) : super(key: key);
@@ -8,7 +11,7 @@ class Feed extends StatefulWidget {
   State<Feed> createState() => _FeedState();
 }
 
-class _FeedState extends State<Feed> {
+class _FeedState extends State<Feed> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -74,10 +77,53 @@ class _FeedState extends State<Feed> {
                 )
               ],
             ),
-            portfolio()
+            portfolio(),
+            tabBar()
           ],
         ),
       ),
+    );
+  }
+
+  Expanded tabBar() {
+    return Expanded(
+      child: DefaultTabController(
+          length: 3,
+          child: Column(
+            children: [
+              Container(
+                width: double.maxFinite,
+                decoration: const BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(color: Colors.grey, width: 0.8))),
+                child: const TabBar(
+                    isScrollable: true,
+                    unselectedLabelStyle:
+                        TextStyle(fontWeight: FontWeight.bold),
+                    unselectedLabelColor: Color(0xff687684),
+                    labelColor: Color(0xffE432C1),
+                    indicatorWeight: 3,
+                    labelStyle: TextStyle(fontWeight: FontWeight.bold),
+                    tabs: [
+                      Tab(
+                        text: "  Research & News  ",
+                      ),
+                      Tab(
+                        text: "  Reactions  ",
+                      ),
+                      Tab(
+                        text: "   Related ",
+                      ),
+                    ],
+                    indicatorSize: TabBarIndicatorSize.label),
+              ),
+              const Expanded(
+                child: TabBarView(
+                  children: [ReasearchAndNews(), Reactions(), Related()],
+                ),
+              )
+            ],
+          )),
     );
   }
 
@@ -86,7 +132,7 @@ class _FeedState extends State<Feed> {
       children: [
         Container(
           clipBehavior: Clip.hardEdge,
-          height: 90,
+          height: 80,
           decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(15),
@@ -96,7 +142,7 @@ class _FeedState extends State<Feed> {
                   end: Alignment.bottomCenter,
                   colors: [Color(0xff2E20DB), Color(0xffE432C1)])),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 8, 20, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -104,12 +150,12 @@ class _FeedState extends State<Feed> {
                 Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                      padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            width: 70,
+                            width: 60,
                             child: FittedBox(
                               fit: BoxFit.fill,
                               child: Text("CHANCE",
@@ -122,12 +168,12 @@ class _FeedState extends State<Feed> {
                             ),
                           ),
                           const SizedBox(
-                            height: 3,
+                            height: 1,
                           ),
                           Text("11%",
                               style: GoogleFonts.montserratAlternates(
                                 textStyle: const TextStyle(
-                                    fontSize: 33,
+                                    fontSize: 30,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ))
@@ -135,7 +181,7 @@ class _FeedState extends State<Feed> {
                       ),
                     ),
                     const Padding(
-                      padding: EdgeInsets.fromLTRB(0, 28, 0, 0),
+                      padding: EdgeInsets.fromLTRB(0, 24, 0, 0),
                       child: ImageIcon(
                         AssetImage("assets/icons/image-2.png"),
                         color: Color(0xff21FFAA),
@@ -143,7 +189,7 @@ class _FeedState extends State<Feed> {
                       ),
                     ),
                     Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 38, 0, 0),
+                        padding: const EdgeInsets.fromLTRB(0, 32, 0, 0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
@@ -175,7 +221,7 @@ class _FeedState extends State<Feed> {
                                 ),
                               )),
                           const SizedBox(
-                            height: 8,
+                            height: 4,
                           ),
                           SizedBox(
                               height: 25,
@@ -203,7 +249,7 @@ class _FeedState extends State<Feed> {
                                 ),
                               )),
                           const SizedBox(
-                            height: 8,
+                            height: 4,
                           ),
                           SizedBox(
                               height: 25,
