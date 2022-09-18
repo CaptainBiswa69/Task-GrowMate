@@ -57,14 +57,17 @@ class ReasearchAndNews extends StatelessWidget {
         const SizedBox(
           height: 8,
         ),
-        Expanded(
-          child: ListView.builder(
-              itemCount: 3,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: ((context, index) {
-                return bottomCard("Thehill", "1st Sept",
-                    "Last week,the dire warnings that appered in the Wall Street Journal, The Economistand Foreign Affairs about China's imminent war with or hello");
-              })),
+        SizedBox(
+          height: 130,
+          child: Expanded(
+            child: ListView.builder(
+                itemCount: 3,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: ((context, index) {
+                  return bottomCard("Thehill", "1st Sept",
+                      "Last week,the dire warnings that appered in the Wall Street Journal, The Economistand Foreign Affairs about China's imminent war with or hello");
+                })),
+          ),
         )
       ],
     );
@@ -75,7 +78,6 @@ class ReasearchAndNews extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: SizedBox(
         width: 260,
-        height: 125,
         child: Stack(
           children: [
             Card(

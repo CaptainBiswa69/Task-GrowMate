@@ -23,14 +23,14 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
                 const Positioned(
                     child: SizedBox(
                   width: 500,
-                  height: 330,
+                  height: 300,
                   child: Image(
                       fit: BoxFit.fill,
                       image: AssetImage("assets/main_view/main.png")),
                 )),
                 Positioned(
                     child: Container(
-                  height: 330,
+                  height: 300,
                   decoration: const BoxDecoration(
                       gradient: LinearGradient(
                           begin: Alignment.topCenter,
@@ -38,7 +38,7 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
                           colors: [Colors.transparent, Colors.black87])),
                 )),
                 Positioned(
-                    top: 260,
+                    top: 230,
                     child: Row(
                       children: [
                         Padding(
