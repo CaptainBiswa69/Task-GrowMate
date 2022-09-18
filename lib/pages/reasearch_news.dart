@@ -94,6 +94,7 @@ class ReasearchAndNews extends StatelessWidget {
                             heading,
                             style: const TextStyle(
                                 fontWeight: FontWeight.bold,
+                                fontSize: 14,
                                 color: Color(0xff080808)),
                           ),
                         ),
@@ -108,13 +109,13 @@ class ReasearchAndNews extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height: 66,
+                      height: 75,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Text(
                           description,
                           style: GoogleFonts.lato(
-                              textStyle: const TextStyle(fontSize: 12)),
+                              textStyle: const TextStyle(fontSize: 13)),
                           maxLines: 4,
                           overflow: TextOverflow.ellipsis,
                         ),

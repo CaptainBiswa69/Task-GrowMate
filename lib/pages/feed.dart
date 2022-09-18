@@ -44,7 +44,7 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
                           child: SizedBox(
-                            width: 300,
+                            width: 280,
                             child: Text(
                                 "Will China invade Taiwan before end september? ",
                                 style: GoogleFonts.lato(
