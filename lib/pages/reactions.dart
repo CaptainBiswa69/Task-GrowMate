@@ -203,7 +203,7 @@ class Reactions extends StatelessWidget {
                       height: 5,
                     ),
                     Container(
-                      height: 7,
+                      height: 5,
                       width: 100,
                       decoration: BoxDecoration(
                           color: const Color(0xffD9D9D9),
@@ -251,7 +251,7 @@ class Reactions extends StatelessWidget {
                                 "Top",
                                 style: GoogleFonts.lato(
                                   textStyle: const TextStyle(
-                                      color: Colors.white, fontSize: 18),
+                                      color: Colors.white, fontSize: 15),
                                 ),
                               ),
                               onPressed: () {},
@@ -265,7 +265,7 @@ class Reactions extends StatelessWidget {
                               label: Text("Newest",
                                   style: GoogleFonts.lato(
                                     textStyle: const TextStyle(
-                                        color: Colors.white, fontSize: 18),
+                                        color: Colors.white, fontSize: 15),
                                   )),
                               onPressed: () {},
                               backgroundColor: const Color(0xff7D7D7D))
