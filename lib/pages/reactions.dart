@@ -33,6 +33,11 @@ class Reactions extends StatelessWidget {
       onTap: () {
         bottomSheet(context, commentData);
       },
+      onVerticalDragUpdate: (value) {
+        if (value.delta.dy < -8) {
+          bottomSheet(context, commentData);
+        }
+      },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

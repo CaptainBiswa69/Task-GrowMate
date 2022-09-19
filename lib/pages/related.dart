@@ -31,6 +31,11 @@ class Related extends StatelessWidget {
       onTap: () {
         bottomSheet(context, data);
       },
+      onVerticalDragUpdate: (value) {
+        if (value.delta.dy < -8) {
+          bottomSheet(context, data);
+        }
+      },
       child: Column(
         children: [
           relatedNewsTile("assets/pictures/Related1.png",
