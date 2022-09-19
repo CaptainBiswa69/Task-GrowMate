@@ -20,17 +20,17 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
           children: [
             Stack(
               children: [
-                const Positioned(
+                Positioned(
                     child: SizedBox(
                   width: 500,
-                  height: 300,
-                  child: Image(
+                  height: MediaQuery.of(context).size.height / 2.75,
+                  child: const Image(
                       fit: BoxFit.fill,
                       image: AssetImage("assets/main_view/main.png")),
                 )),
                 Positioned(
                     child: Container(
-                  height: 300,
+                  height: MediaQuery.of(context).size.height / 2.75,
                   decoration: const BoxDecoration(
                       gradient: LinearGradient(
                           begin: Alignment.topCenter,
@@ -38,7 +38,7 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
                           colors: [Colors.transparent, Colors.black87])),
                 )),
                 Positioned(
-                    top: 230,
+                    top: MediaQuery.of(context).size.height / 3.56,
                     child: Row(
                       children: [
                         Padding(
@@ -55,8 +55,8 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
                                 )),
                           ),
                         ),
-                        const SizedBox(
-                          width: 50,
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width / 6.32,
                         ),
                         const ImageIcon(
                           AssetImage("assets/icons/Filter_1.png"),
@@ -78,7 +78,7 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
                 )
               ],
             ),
-            portfolio(),
+            portfolio(context),
             tabBar()
           ],
         ),
@@ -113,12 +113,12 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
                         text: "  Reactions  ",
                       ),
                       Tab(
-                        text: "   Related ",
+                        text: "   Related  ",
                       ),
                     ],
                     indicatorSize: TabBarIndicatorSize.label),
               ),
-              const Expanded(
+              Expanded(
                 child: TabBarView(
                   children: [ReasearchAndNews(), Reactions(), Related()],
                 ),
@@ -128,12 +128,12 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
     );
   }
 
-  Stack portfolio() {
+  Stack portfolio(BuildContext context) {
     return Stack(
       children: [
         Container(
           clipBehavior: Clip.hardEdge,
-          height: 80,
+          height: MediaQuery.of(context).size.height / 10.25,
           decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(15),
@@ -156,7 +156,7 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            width: 60,
+                            width: MediaQuery.of(context).size.width / 6.85,
                             child: FittedBox(
                               fit: BoxFit.fill,
                               child: Text("CHANCE",
@@ -181,28 +181,36 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
                         ],
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.fromLTRB(0, 24, 0, 0),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(
+                          0, MediaQuery.of(context).size.width / 17.14, 0, 0),
                       child: ImageIcon(
-                        AssetImage("assets/icons/image-2.png"),
-                        color: Color(0xff21FFAA),
-                        size: 50,
+                        const AssetImage("assets/icons/image-2.png"),
+                        color: const Color(0xff21FFAA),
+                        size: MediaQuery.of(context).size.width / 8.22,
                       ),
                     ),
                     Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 32, 0, 0),
+                        padding: EdgeInsets.fromLTRB(
+                            0, MediaQuery.of(context).size.width / 12.85, 0, 0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Text("24H",
                                 style: GoogleFonts.lato(
-                                    textStyle: const TextStyle(
-                                        color: Colors.white, fontSize: 11))),
+                                    textStyle: TextStyle(
+                                        color: Colors.white,
+                                        fontSize:
+                                            MediaQuery.of(context).size.width /
+                                                37.4))),
                             Text(
                               "+25495\$",
                               style: GoogleFonts.lato(
-                                  textStyle: const TextStyle(
-                                      color: Colors.white, fontSize: 11)),
+                                  textStyle: TextStyle(
+                                      color: Colors.white,
+                                      fontSize:
+                                          MediaQuery.of(context).size.width /
+                                              37.4)),
                             )
                           ],
                         )),
@@ -216,8 +224,9 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
                         children: [
                           Text("\$09",
                               style: GoogleFonts.lato(
-                                textStyle: const TextStyle(
-                                  fontSize: 22,
+                                textStyle: TextStyle(
+                                  fontSize:
+                                      MediaQuery.of(context).size.width / 18.7,
                                   color: Colors.white,
                                 ),
                               )),
@@ -225,27 +234,32 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
                             height: 4,
                           ),
                           SizedBox(
-                              height: 25,
+                              height:
+                                  MediaQuery.of(context).size.height / 32.82,
                               child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                       primary: const Color(0xff21FFAA)),
                                   onPressed: () {},
-                                  child: const Text(
+                                  child: Text(
                                     "Yes",
                                     style: TextStyle(
-                                        color: Colors.black, fontSize: 18),
+                                        color: Colors.black,
+                                        fontSize:
+                                            MediaQuery.of(context).size.width /
+                                                22.85),
                                   )))
                         ],
                       ),
-                      const SizedBox(
-                        width: 10,
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 41.14,
                       ),
                       Column(
                         children: [
                           Text("\$89",
                               style: GoogleFonts.lato(
-                                textStyle: const TextStyle(
-                                  fontSize: 22,
+                                textStyle: TextStyle(
+                                  fontSize:
+                                      MediaQuery.of(context).size.width / 18.7,
                                   color: Colors.white,
                                 ),
                               )),
@@ -253,15 +267,19 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
                             height: 4,
                           ),
                           SizedBox(
-                              height: 25,
+                              height:
+                                  MediaQuery.of(context).size.height / 32.82,
                               child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                       primary: const Color(0xffE432C1)),
                                   onPressed: () {},
-                                  child: const Text(
+                                  child: Text(
                                     "No",
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 18),
+                                        color: Colors.white,
+                                        fontSize:
+                                            MediaQuery.of(context).size.width /
+                                                22.85),
                                   )))
                         ],
                       ),
@@ -275,8 +293,8 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
         Align(
           alignment: Alignment.topCenter,
           child: Image(
-            height: 80,
-            width: 70,
+            height: MediaQuery.of(context).size.height / 10.25,
+            width: MediaQuery.of(context).size.width / 5.87,
             fit: BoxFit.fitWidth,
             image: const AssetImage("assets/icons/flying_coins.png"),
             color: const Color(0xff0CF2B4).withOpacity(0.3),

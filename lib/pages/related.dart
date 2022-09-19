@@ -3,10 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:grow_mate/models/related_news_tile.dart';
 
 class Related extends StatelessWidget {
-  const Related({Key? key}) : super(key: key);
+  Related({Key? key}) : super(key: key);
+  late MediaQueryData queryData;
 
   @override
   Widget build(BuildContext context) {
+    queryData = MediaQuery.of(context);
     List<RelatedNewsTile> data = [
       RelatedNewsTile(
           imagepath: "assets/pictures/Related1.png",
@@ -66,8 +68,8 @@ class Related extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            height: 80,
-            width: 370,
+            height: queryData.size.height / 10.25,
+            width: queryData.size.width / 1.11,
             decoration: BoxDecoration(
                 border: Border.all(color: const Color(0xffCED5DC)),
                 borderRadius: BorderRadius.circular(15)),
@@ -86,11 +88,12 @@ class Related extends StatelessWidget {
                   width: 20,
                 ),
                 SizedBox(
-                  width: 240,
+                  width: queryData.size.width / 1.71,
                   child: Text(
                     news,
                     style: GoogleFonts.lato(
-                        textStyle: const TextStyle(fontSize: 17)),
+                        textStyle:
+                            TextStyle(fontSize: queryData.size.width / 24.20)),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                   ),
@@ -108,7 +111,7 @@ class Related extends StatelessWidget {
         context: context,
         builder: (BuildContext context) {
           return SizedBox(
-              height: MediaQuery.of(context).size.height - 380,
+              height: MediaQuery.of(context).size.height / 1.8,
               width: MediaQuery.of(context).size.width,
               child: Column(children: [
                 Column(
@@ -190,7 +193,7 @@ class Related extends StatelessWidget {
                     color: Color(0xff2B2B2B),
                   ),
                   SizedBox(
-                    height: 305,
+                    height: MediaQuery.of(context).size.height / 2.43,
                     child: SingleChildScrollView(
                       child: ListView.builder(
                           shrinkWrap: true,

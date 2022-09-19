@@ -2,33 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ReasearchAndNews extends StatelessWidget {
-  const ReasearchAndNews({Key? key}) : super(key: key);
+  ReasearchAndNews({Key? key}) : super(key: key);
+  late MediaQueryData queryData;
 
   @override
   Widget build(BuildContext context) {
+    queryData = MediaQuery.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: queryData.size.width / 20.57,
+              vertical: queryData.size.height / 82.05),
           child: Text(
             "215 Expert Opinion",
             style: TextStyle(
                 color: Color(0xff687684),
-                fontSize: 15,
+                fontSize: queryData.size.width / 27.42,
                 fontWeight: FontWeight.bold),
           ),
         ),
         Row(
           children: [
             Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                padding: EdgeInsets.symmetric(
+                    horizontal: queryData.size.width / 20.57,
+                    vertical: queryData.size.height / 164.1),
                 child: CircleAvatar(
-                  radius: 45,
+                  radius: queryData.size.width / 9.14,
                   backgroundColor: const Color(0xffC930C5).withOpacity(0.1),
                   child: CircleAvatar(
-                    radius: 35,
+                    radius: queryData.size.width / 11.74,
                     backgroundColor: const Color(0xffC930C5).withOpacity(0.2),
                     child: const Text(
                       "12%",
@@ -58,16 +63,14 @@ class ReasearchAndNews extends StatelessWidget {
           height: 8,
         ),
         SizedBox(
-          height: 130,
-          child: Expanded(
-            child: ListView.builder(
-                itemCount: 3,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: ((context, index) {
-                  return bottomCard("Thehill", "1st Sept",
-                      "Last week,the dire warnings that appered in the Wall Street Journal, The Economistand Foreign Affairs about China's imminent war with or hello");
-                })),
-          ),
+          height: MediaQuery.of(context).size.height / 6.3,
+          child: ListView.builder(
+              itemCount: 3,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: ((context, index) {
+                return bottomCard("Thehill", "1st Sept",
+                    "Last week,the dire warnings that appered in the Wall Street Journal, The Economistand Foreign Affairs about China's imminent war with or hello");
+              })),
         )
       ],
     );
@@ -75,9 +78,9 @@ class ReasearchAndNews extends StatelessWidget {
 
   Padding bottomCard(String heading, String date, String description) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: EdgeInsets.symmetric(horizontal: queryData.size.width / 41.14),
       child: SizedBox(
-        width: 260,
+        width: queryData.size.width / 1.58,
         child: Stack(
           children: [
             Card(
@@ -109,13 +112,15 @@ class ReasearchAndNews extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height: 75,
+                      height: queryData.size.height / 10.94,
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: queryData.size.width / 41.14),
                         child: Text(
                           description,
                           style: GoogleFonts.lato(
-                              textStyle: const TextStyle(fontSize: 13)),
+                              textStyle: TextStyle(
+                                  fontSize: queryData.size.width / 31.64)),
                           maxLines: 4,
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -156,31 +161,35 @@ class ReasearchAndNews extends StatelessWidget {
         Stack(
           children: [
             Container(
-              height: 8,
+              height: queryData.size.height / 102.56,
               width: MediaQuery.of(context).size.width / 2.5,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
+                borderRadius:
+                    BorderRadius.circular(queryData.size.width / 16.45),
                 color: const Color(0xffD9D9D9),
               ),
             ),
             AnimatedContainer(
               duration: const Duration(microseconds: 800),
-              height: 8,
+              height: queryData.size.height / 102.56,
               width: (MediaQuery.of(context).size.width / 2.5) * value / 100,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
+                borderRadius:
+                    BorderRadius.circular(queryData.size.width / 16.45),
                 color: color,
               ),
             ),
           ],
         ),
-        const SizedBox(
-          width: 10,
+        SizedBox(
+          width: queryData.size.width / 41.14,
         ),
         Text(
           stringData,
           style: TextStyle(
-              color: color, fontSize: 10, fontWeight: FontWeight.bold),
+              color: color,
+              fontSize: queryData.size.width / 41.14,
+              fontWeight: FontWeight.bold),
         )
       ],
     );

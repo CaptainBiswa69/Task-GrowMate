@@ -3,10 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:grow_mate/models/comment_tile.dart';
 
 class Reactions extends StatelessWidget {
-  const Reactions({Key? key}) : super(key: key);
+  Reactions({Key? key}) : super(key: key);
+  late MediaQueryData queryData;
 
   @override
   Widget build(BuildContext context) {
+    queryData = MediaQuery.of(context);
     List<CommentTile> commentData = [
       CommentTile(
           name: 'Prof.alison   1h ago',
@@ -136,7 +138,9 @@ class Reactions extends StatelessWidget {
           const SizedBox(
             width: 15,
           ),
-          SizedBox(width: 250, child: commentText(user, comment)),
+          SizedBox(
+              width: queryData.size.width / 1.64,
+              child: commentText(user, comment)),
           Column(
             children: [
               const Text(""),
@@ -198,7 +202,7 @@ class Reactions extends StatelessWidget {
         context: context,
         builder: (BuildContext context) {
           return SizedBox(
-            height: MediaQuery.of(context).size.height - 380,
+            height: MediaQuery.of(context).size.height / 1.8,
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
@@ -251,7 +255,7 @@ class Reactions extends StatelessWidget {
                         children: [
                           ActionChip(
                               labelPadding:
-                                  const EdgeInsets.symmetric(horizontal: 15),
+                                  const EdgeInsets.symmetric(horizontal: 18),
                               label: Text(
                                 "Top",
                                 style: GoogleFonts.lato(
@@ -346,7 +350,7 @@ class Reactions extends StatelessWidget {
                       color: Color(0xff2B2B2B),
                     ),
                     SizedBox(
-                      height: 215,
+                      height: MediaQuery.of(context).size.height / 3.33,
                       child: SingleChildScrollView(
                         child: ListView.builder(
                             shrinkWrap: true,
