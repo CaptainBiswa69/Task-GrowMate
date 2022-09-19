@@ -273,15 +273,13 @@ class _FeedState extends State<Feed> with TickerProviderStateMixin {
           ),
         ),
         Align(
-          alignment: Alignment.center,
-          child: Column(
-            children: const [
-              ImageIcon(
-                AssetImage("assets/icons/Tracciato_780.png"),
-                color: Color(0xff0CF2B4),
-                size: 40,
-              )
-            ],
+          alignment: Alignment.topCenter,
+          child: Image(
+            height: 80,
+            width: 70,
+            fit: BoxFit.fitWidth,
+            image: const AssetImage("assets/icons/flying_coins.png"),
+            color: const Color(0xff0CF2B4).withOpacity(0.3),
           ),
         )
       ],
